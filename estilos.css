@@ -1,4 +1,8 @@
 /*AcercaDe e index*/
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +27,24 @@ h2 {
     margin-right: 20%;
 }
 
+@media (max-width: 768px) {
+    h2 {
+        font-size: 150%;
+    }
+
+    p {
+        font-size: 110%;
+    }
+
+    td {
+        font-size: 80%;
+    }
+
+    label {
+        font-size: 100%;
+    }
+}
+
 nav {
     background-color: #232b33;
     border-bottom-left-radius: 30px;
@@ -42,11 +64,18 @@ nav ul li {
     margin-right: 10px;
 }
 
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-right: 0;
+    }
+}
+
 nav ul li a {
     color: black;
     text-decoration: none;
     padding: 1%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 120%;
     display: inline-block;
     color: white;
@@ -65,7 +94,7 @@ main {
 
 p {
     background-color: #eb8a7b;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 130%;
     border-radius: 30px;
     padding: 1%;
@@ -84,8 +113,8 @@ footer {
 }
 
 img {
-    width: 200px; 
-    border-radius: 50%; 
+    width: 200px;
+    border-radius: 50%;
 }
 
 /*Contacto*/
@@ -95,13 +124,22 @@ body {
 
 form {
     background-color: #eb8a7b;
-    margin-top:5%;
+    margin: 5% auto;
     margin-bottom: 5%;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 2%;
     border-radius: 50px;
     padding: 3%;
     border: solid #292929 4px;
+}
+
+@media (max-width: 768px) {
+    form {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 2%;
+    }
 }
 
 label {
@@ -117,16 +155,59 @@ input {
     border-top-right-radius: 10px;
 }
 
-label, input, select, textarea {
+label,
+input,
+select,
+textarea {
     display: block;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 div {
-    background-color: #f4d6c1  ;
-    margin-bottom: 20px;
-    border: solid 10px #d17c6a ;
+    background-color: #f4d6c1;
+    margin: 10px 0;
+    border: solid 10px #d17c6a;
     border-radius: 30px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    div {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+p {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+label {
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 95%;
+        padding: 2%;
+    }
+    label {
+        font-size: 90%;
+    }
+    p {
+        font-size: 110%;
+    }
+    div {
+        margin: 5px 0;
+    }
 }
 
 div p {
@@ -143,25 +224,32 @@ div input {
 }
 
 button {
-    background-color: #f4d6c1;  
-    color: black;    
-    font-family: Georgia, 'Times New Roman', Times, serif;        
-    font-size: 15px;
-    border: none;              
-    padding: 2%;  
-    text-align: center;        
-    text-decoration: none;       
-    margin-top: 5px;  
-    margin-bottom: 20px;        
-    cursor: pointer;           
-    border-radius: 5px;     
+    background-color: #f4d6c1;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    button {
+        font-size: 80%;
+        padding: 1%;
+    }
 }
 
 button:hover {
     background-color: #d17c6a;
-    color: white;  
+    color: white;
     border: solid #232b33;
-    font-size: 15px;
+    font-size: 100%;
 }
 
 table {
@@ -169,6 +257,7 @@ table {
     background-color: #f4d6c1;
     border-collapse: collapse;
     margin-top: 20px;
+    margin-bottom: 10%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
 }
@@ -177,7 +266,7 @@ td {
     padding: 10px;
     border: 2px solid black;
     text-align: left;
-    font-size: 16px;
+    font-size: 80%;
 }
 
 table tr:hover {
