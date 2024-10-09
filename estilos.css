@@ -1,4 +1,10 @@
 /*AcercaDe e index*/
+/* COLORES:
+#f4d6c1
+#f4f4f9
+#eb8a7b
+#232b33
+#d17c6a*/
 * {
     box-sizing: border-box;
 }
@@ -24,7 +30,7 @@ h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.25rem;
     border-radius: 50px;
-    margin: 0 20%;
+    margin: 2% 20%;
 }
 
 nav {
@@ -78,7 +84,7 @@ p {
 footer {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    background-color: #232b33;
+    background-color: #f4d6c1;
     color: black;
     text-align: center;
 }
@@ -125,7 +131,7 @@ form {
     border-radius: 50px;
     padding: 3%;
     border: solid #292929 4px;
-    width: 80%;
+    width: 50%;
 }
 
 label {
@@ -139,14 +145,8 @@ input {
     border-radius: 10px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
 label,
 input,
-select,
 textarea {
     display: block;
     margin-bottom: 10px;
