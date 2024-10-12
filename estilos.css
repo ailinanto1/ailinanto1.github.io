@@ -193,7 +193,6 @@ button {
     padding: 10px;
     text-align: center;
     margin-top: 5px;
-    margin-bottom: 20px;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -201,14 +200,13 @@ button {
 button:hover {
     background-color: #d17c6a;
     color: white;
-    border: solid #232b33;
 }
 
 table {
-    width: 100%;
+    width: 50%;
     background-color: #f4d6c1;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 20px auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.25rem;
 }
