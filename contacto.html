@@ -19,25 +19,25 @@
     </nav>
     <form action="#">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" maxlength="20" required>
+        <input type="text" id="nombre" name="nombre" maxlength="20" required oninput="actualizarTabla('nombre', 'tablaNombre')">
 
         <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" maxlength="20">
+        <input type="text" id="apellido" name="apellido" maxlength="20" oninput="actualizarTabla('apellido', 'tablaApellido')">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required oninput="actualizarTabla('email', 'tablaEmail')">
 
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" oninput="actualizarTabla('telefono', 'tablaTelefono')">
 
         <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" min="16" max="120">
+        <input type="number" id="edad" name="edad" min="16" max="120" oninput="actualizarTabla('edad', 'tablaEdad')">
 
         <label for="direccion">Dirección:</label>
-        <textarea id="direccion" name="direccion"></textarea>
+        <input type="text" id="direccion" oninput="actualizarTabla('direccion', 'tablaDireccion')">
 
         <label for="provincia">Provincia:</label>
-        <input list="provincias" id="provincia" name="provincia" placeholder="Escriba su provincia">
+        <input list="provincias" id="provincia" name="provincia" placeholder="Escriba su provincia" oninput="actualizarTabla('provincia', 'tablaProvincia')">
         <datalist id="provincias">
             <option value="Chubut">
             <option value="Santa Cruz">
@@ -45,31 +45,33 @@
             <option value="Neuquén">
             <option value="Río Negro">
         </datalist>
+
         <label for="codigo-postal">Código Postal:</label>
-        <input type="text" id="codigo-postal" name="codigo-postal" pattern="[A-Z]\d{4}[A-Z]{3}">
+        <input type="text" id="codigo-postal" name="codigo-postal" pattern="[A-Z]\d{4}[A-Z]{3}" oninput="actualizarTabla('codigo-postal', 'tablaCorreo-postal')">
+
         <div>
             <p>Método de contacto preferido</p>
-            <input type="radio" id="email" name="contacto" value="correo electrónico" checked>
+            <input type="radio" id="email" name="contacto" value="correo electrónico" checked onclick="actualizarTablaRadio('tablaContacto')">
             <label for="email">Correo electrónico</label>
 
-            <input type="radio" id="postal" name="contacto" value="correo postal">
+            <input type="radio" id="postal" name="contacto" value="correo postal" onclick="actualizarTablaRadio('tablaContacto')">
             <label for="postal">Correo postal</label>
 
-            <input type="radio" id="telefono" name="contacto" value="teléfono">
+            <input type="radio" id="telefono" name="contacto" value="teléfono" onclick="actualizarTablaRadio('tablaContacto')">
             <label for="telefono">Teléfono</label>
         </div>
         <div>
             <p>Suscripción</p>
-            <input type="checkbox" id="noticias" name="suscripcion" value="noticias">
+            <input type="checkbox" id="noticias" name="suscripcion" value="noticias" oninput="actualizarTabla('noticias', 'tablaSuscripcion')">
             <label for="noticias">Noticias</label>
 
-            <input type="checkbox" id="promociones" name="suscripcion" value="promociones">
+            <input type="checkbox" id="promociones" name="suscripcion" value="promociones" oninput="actualizarTabla('promociones', 'tablaSuscripcion')">
             <label for="promociones">Promociones</label>
 
-            <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked>
+            <input type="checkbox" id="alertas" name="suscripcion" value="alertas" checked oninput="actualizarTabla('alertas', 'tablaSuscripcion')">
             <label for="alertas">Alertas</label>
 
-            <input type="checkbox" id="eventos" name="suscripcion" value="eventos">
+            <input type="checkbox" id="eventos" name="suscripcion" value="eventos" oninput="actualizarTabla('eventos', 'tablaSuscripcion')">
             <label for="eventos">Eventos</label>
         </div>
         <button type="button">Cargar</button>
@@ -77,38 +79,50 @@
     <table>
         <thead>
             <tr>
-                <th>Campo</th>
-                <th>Valor</th>
+                <th></th>
+                <th>Datos</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td data-label="Nombre">Nombre</td>
-                <td data-label="Valor"></td>
+                <td id="tablaNombre"></td>
             </tr>
             <tr>
                 <td data-label="Apellido">Apellido</td>
-                <td data-label="Valor"></td>
+                <td id="tablaApellido"></td>
             </tr>
             <tr>
                 <td data-label="Email">Email</td>
-                <td data-label="Valor"></td>
+                <td id="tablaEmail"></td>
             </tr>
             <tr>
                 <td data-label="Telefono">Teléfono</td>
-                <td data-label="Valor"></td>
+                <td id="tablaTelefono"></td>
             </tr>
             <tr>
                 <td data-label="Edad">Edad</td>
-                <td data-label="Valor"></td>
+                <td id="tablaEdad"></td>
             </tr>
             <tr>
                 <td data-label="Direccion">Dirección</td>
-                <td data-label="Valor"></td>
+                <td id="tablaDireccion"></td>
             </tr>
             <tr>
                 <td data-label="Provincia">Provincia</td>
-                <td data-label="Valor"></td>
+                <td id="tablaProvincia"></td>
+            </tr>
+            <tr>
+                <td data-label="Codigo-postal">Codigo postal</td>
+                <td id="tablaCorreo-postal"></td>
+            </tr>
+            <tr>
+                <td data-label="Metodo-contacto">Método de contacto</td>
+                <td id="tablaContacto"></td>
+            </tr>
+            <tr>
+                <td data-label="suscripcion">Suscripción</td>
+                <td id="tablaSuscripcion"></td>
             </tr>
         </tbody>
     </table>
@@ -116,5 +130,5 @@
         <img src="flecha.jpg" alt="" class="flecha-inicio">
     </a>
 </body>
-<script src="animacion.js"></script>
+<script src="script.js"></script>
 </html>

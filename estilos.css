@@ -13,6 +13,7 @@
 h2,
 footer {
     font-family: 'Roboto', sans-serif;
+    margin-top: 10%;
 }
 
 /*acercaDe*/
@@ -286,4 +287,27 @@ td {
     right: 20px; 
     width: 50px; 
     cursor: pointer; 
+}
+
+/*Currículum*/
+
+.curriculum {
+    width: 60%;
+    margin-left: 20%;
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+
+h4 {
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+section {
+    margin-top: 5%;
 }
