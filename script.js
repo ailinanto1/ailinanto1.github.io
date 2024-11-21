@@ -22,37 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Función para actualizar la tabla con el radio seleccionado
-    function actualizarTablaRadio(tablaId) {
-        const radios = document.getElementsByName("contacto");
-        let valorSeleccionado = "";
-
-        // Encontrar el radio seleccionado
-        for (const radio of radios) {
-            if (radio.checked) {
-                valorSeleccionado = radio.value;
-                break;
-            }
+    function actualizarTablaRadio(idTabla) {
+        const seleccion = document.querySelector('input[name="contacto"]:checked');
+        if (seleccion) {
+            document.getElementById(idTabla).textContent = seleccion.value;
         }
-
-        // Actualizar el contenido en la tabla
-        document.getElementById(tablaId).textContent = valorSeleccionado;
     }
-
+    
     actualizarTablaRadio();
 
     // Poner los datos en la tabla
-    function actualizarTabla(inputId, tablaId) {
-        // Verificar si el campo es parte de los checkboxes de suscripción
-        if (inputId === 'noticias' || inputId === 'promociones' || inputId === 'alertas' || inputId === 'eventos') {
-            const checkboxes = document.querySelectorAll('input[name="suscripcion"]:checked'); // Selecciona solo los checkboxes marcados
-            const valoresSeleccionados = Array.from(checkboxes).map(checkbox => checkbox.value); // Obtén los valores de los checkboxes seleccionados
-            document.getElementById(tablaId).textContent = valoresSeleccionados.join(', '); // Muestra los valores seleccionados en la tabla
+    function actualizarTabla(idInput, idTabla) {
+        const input = document.getElementById(idInput);
+        const celda = document.getElementById(idTabla);
+    
+        if (input.type === "checkbox") {
+            const checkboxes = document.querySelectorAll(`input[name="${input.name}"]:checked`);
+            const valores = Array.from(checkboxes).map(checkbox => checkbox.value);
+            celda.textContent = valores.join(", ");
         } else {
-            // Para otros campos, solo toma el valor directo del input
-            const valor = document.getElementById(inputId).value;
-            document.getElementById(tablaId).textContent = valor;
+            celda.textContent = input.value;
         }
-    }
+    }    
 
     actualizarTabla();
 
